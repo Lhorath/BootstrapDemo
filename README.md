@@ -1,5 +1,8 @@
 Icon: fa-brands fa-bootstrap
-Description: Simple HTML Bootstrap Website
+
+Description: html website used for learning bootstrap during college
+
 GitHub: https://github.com/Lhorath/Bootstrap
 
-# Directory Tool: A Dynamic PHP Project Hub
+# Bootstrap Demo:
+> html website used for learning bootstrap during college
