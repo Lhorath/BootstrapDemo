@@ -1,19 +1,16 @@
+<?php declare(strict_types=1); ?>
         <!-- About page content -->
         <div class="container">
-            <!-- mwilliams:  Page Header/Breadcrumbs -->
             <h1 class="mt-4 mb-3">About
-                <small>Our Business</small>
+                <small class="text-muted">Our Business</small>
             </h1>
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="/">Home</a>
-                </li>
-                <li class="breadcrumb-item active">About</li>
-            </ol>
-            <!-- End Page Header/Breadcrumbs -->
+            <?php app_breadcrumb([
+                ['label' => 'Home', 'href' => app_url()],
+                ['label' => 'About'],
+            ]); ?>
             <div class="row">
                 <div class="col-lg-6">
-                    <img class="img-fluid rounded mb-4" src="/images/placeholders/about-750x450.svg" alt="">
+                    <img class="img-fluid rounded mb-4" src="<?= h(app_url('images/placeholders/about-750x450.svg')) ?>" alt="">
                 </div>
                 <div class="col-lg-6">
                     <h2>About Our Business</h2>

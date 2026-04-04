@@ -13,10 +13,11 @@ http_response_code($dispatch['status']);
 $route = $dispatch['route'];
 $pageTitle = $dispatch['page_title'];
 
-// Expose template-specific variables (product detail, listings, etc.)
-foreach ($dispatch['vars'] as $key => $value) {
-    ${$key} = $value;
-}
+// Explicit template vars (router-controlled keys only — avoids extract() variable injection).
+$vars = $dispatch['vars'];
+$products = $vars['products'] ?? [];
+/** @var array{title: string, summary: string, body: string}|null $product */
+$product = $vars['product'] ?? null;
 
 $templatePath = __DIR__ . '/templates/' . $dispatch['template'];
 if (!is_readable($templatePath)) {

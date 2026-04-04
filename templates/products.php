@@ -1,9 +1,10 @@
+<?php declare(strict_types=1); ?>
     <div class="container">
       <h1 class="mt-4 mb-3">Products</h1>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item active">Products</li>
-      </ol>
+      <?php app_breadcrumb([
+          ['label' => 'Home', 'href' => app_url()],
+          ['label' => 'Products'],
+      ]); ?>
       <p class="lead">Browse offerings; each item has its own clean URL under <code>/products/</code>.</p>
 
       <div class="row">
@@ -13,7 +14,7 @@
               <div class="card-body">
                 <h2 class="h5 card-title"><?= h($item['title']) ?></h2>
                 <p class="card-text"><?= h($item['summary']) ?></p>
-                <a class="btn btn-primary" href="/products/<?= h($slug) ?>">View details</a>
+                <a class="btn btn-primary" href="<?= h(app_url('products/' . $slug)) ?>">View details</a>
               </div>
             </div>
           </div>

@@ -1,10 +1,10 @@
 /*!
- * Start Bootstrap - Busines Frontpage (https://startbootstrap.com/template-overviews/business-frontpage)
+ * Start Bootstrap - Business Frontpage (https://startbootstrap.com/template-overviews/business-frontpage)
  * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-frontpage/blob/master/LICENSE)
  */
 
-/* mwilliams:  Sticky footer styles */
+/* Sticky footer: footer pinned to viewport bottom when content is short */
 html {
   position: relative;
   min-height: 100%;
@@ -14,7 +14,6 @@ footer {
   bottom: 0;
   width: 100%;
 }
-/* end sticky footer styles */
 body {
   padding-top: 54px;
 }
@@ -29,11 +28,9 @@ body {
   height: 50vh;
   min-height: 300px;
   /* Local asset: avoids cross-origin blocks (e.g. CORP) from third-party placeholder hosts */
-  background: url('/images/placeholders/hero-bg.svg') center center no-repeat scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
+  /* Path relative to this stylesheet so hero works in subdirectory deployments */
+  background: url('../images/placeholders/hero-bg.svg') center center no-repeat scroll;
   background-size: cover;
-  -o-background-size: cover;
 }
 
 .card {

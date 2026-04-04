@@ -1,6 +1,5 @@
-﻿# Dependencies
+# Dependencies (front-end assets are vendored under vendor/ for a zero-tooling clone)
 node_modules/
-vendor/
 
 # Environment and secrets
 .env

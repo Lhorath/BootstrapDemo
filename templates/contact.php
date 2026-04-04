@@ -1,9 +1,10 @@
+<?php declare(strict_types=1); ?>
     <div class="container">
       <h1 class="mt-4 mb-3">Contact</h1>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item active">Contact</li>
-      </ol>
+      <?php app_breadcrumb([
+          ['label' => 'Home', 'href' => app_url()],
+          ['label' => 'Contact'],
+      ]); ?>
       <address class="mt-3">
         <strong>Start Bootstrap</strong><br>
         3481 Melrose Place<br>

@@ -1,3 +1,4 @@
+<?php declare(strict_types=1); ?>
     <!-- Hero (matches original static index layout) -->
     <header class="business-header">
       <div class="container">
@@ -43,37 +44,37 @@
       <div class="row">
         <div class="col-sm-4 my-4">
           <div class="card">
-            <img class="card-img-top" src="/images/placeholders/card-300x200.svg" alt="">
+            <img class="card-img-top" src="<?= h(app_url('images/placeholders/card-300x200.svg')) ?>" alt="">
             <div class="card-body">
               <h4 class="card-title">Card title</h4>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
             </div>
             <div class="card-footer">
-              <a href="/products/starter-plan" class="btn btn-primary">Find Out More!</a>
+              <a href="<?= h(app_url('products/starter-plan')) ?>" class="btn btn-primary">Find Out More!</a>
             </div>
           </div>
         </div>
         <div class="col-sm-4 my-4">
           <div class="card">
-            <img class="card-img-top" src="/images/placeholders/card-300x200.svg" alt="">
+            <img class="card-img-top" src="<?= h(app_url('images/placeholders/card-300x200.svg')) ?>" alt="">
             <div class="card-body">
               <h4 class="card-title">Card title</h4>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
             </div>
             <div class="card-footer">
-              <a href="/products/professional-suite" class="btn btn-primary">Find Out More!</a>
+              <a href="<?= h(app_url('products/professional-suite')) ?>" class="btn btn-primary">Find Out More!</a>
             </div>
           </div>
         </div>
         <div class="col-sm-4 my-4">
           <div class="card">
-            <img class="card-img-top" src="/images/placeholders/card-300x200.svg" alt="">
+            <img class="card-img-top" src="<?= h(app_url('images/placeholders/card-300x200.svg')) ?>" alt="">
             <div class="card-body">
               <h4 class="card-title">Card title</h4>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
             </div>
             <div class="card-footer">
-              <a href="/products/enterprise-cloud" class="btn btn-primary">Find Out More!</a>
+              <a href="<?= h(app_url('products/enterprise-cloud')) ?>" class="btn btn-primary">Find Out More!</a>
             </div>
           </div>
         </div>
