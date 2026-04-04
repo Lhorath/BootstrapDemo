@@ -1,0 +1,19 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Serve existing files and directories as-is (CSS, JS, images, etc.)
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Legacy entry point → canonical URL
+    RewriteRule ^about\.php$ /about [R=301,L]
+
+    # Clean URLs → front controller
+    RewriteRule ^$ index.php?route=home [L,QSA]
+    RewriteRule ^([a-zA-Z0-9_-]+)/?$ index.php?route=$1 [L,QSA]
+</IfModule>
+
+# Optional: default index
+DirectoryIndex index.php index.html

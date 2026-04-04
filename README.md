@@ -4,7 +4,6 @@ Description: html website used for learning bootstrap during college
 
 GitHub: https://github.com/Lhorath/Bootstrap
 
-Live: http://bs.nerdygamertools.com
+Live: http://bootstrapdemo.dackdns.ddns.net/
 
-# Bootstrap Demo:
-> html website used for learning bootstrap during college
+# Bootstrap Demo Template
