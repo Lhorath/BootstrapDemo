@@ -1,9 +1,19 @@
-Icon: fa-brands fa-bootstrap
+# Bootstrap demo (PHP router)
 
-Description: html website used for learning bootstrap during college
+This site was built **during college in 2016** as a learning exercise. It is published on GitHub for **archival purposes** only—not as an active product or maintained portfolio piece.
 
-GitHub: https://github.com/Lhorath/Bootstrap
+---
 
-Live: http://bootstrapdemo.dackdns.ddns.net/
+Small **PHP** multi-page demo using a query-based router (`?route=home|about|services|contact`). Shared layout lives in `includes/`; page bodies in `templates/`.
 
-# Bootstrap Demo Template
+## Requirements
+
+- PHP 7.4+ recommended (uses `declare(strict_types=1)`).
+
+## Run
+
+Point the document root at this folder and open `index.php` (e.g. `/` or `/index.php?route=home`).
+
+## License
+
+See [LICENSE](LICENSE) (MIT).
