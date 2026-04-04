@@ -1,4 +1,4 @@
-        <!-- Page Page Content -->
+        <!-- About page content -->
         <div class="container">
             <!-- mwilliams:  Page Header/Breadcrumbs -->
             <h1 class="mt-4 mb-3">About
@@ -13,7 +13,7 @@
             <!-- End Page Header/Breadcrumbs -->
             <div class="row">
                 <div class="col-lg-6">
-                    <img class="img-fluid rounded mb-4" src="http://placehold.it/750x450" alt="">
+                    <img class="img-fluid rounded mb-4" src="/images/placeholders/about-750x450.svg" alt="">
                 </div>
                 <div class="col-lg-6">
                     <h2>About Our Business</h2>

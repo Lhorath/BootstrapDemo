@@ -2,18 +2,19 @@
     RewriteEngine On
     RewriteBase /
 
-    # Serve existing files and directories as-is (CSS, JS, images, etc.)
+    # Serve real files and directories (CSS, JS, vendor assets) without routing.
     RewriteCond %{REQUEST_FILENAME} -f [OR]
     RewriteCond %{REQUEST_FILENAME} -d
     RewriteRule ^ - [L]
 
-    # Legacy entry point → canonical URL
+    # Legacy PHP entry point → canonical fancy URL
     RewriteRule ^about\.php$ /about [R=301,L]
 
-    # Clean URLs → front controller
-    RewriteRule ^$ index.php?route=home [L,QSA]
-    RewriteRule ^([a-zA-Z0-9_-]+)/?$ index.php?route=$1 [L,QSA]
+    # Default favicon request → same-origin SVG (avoids 404; keeps one asset to maintain)
+    RewriteRule ^favicon\.ico$ /images/favicon.svg [L]
+
+    # All other requests → front controller (paths parsed in PHP for /products/item-name, etc.)
+    RewriteRule ^ index.php [L,QSA]
 </IfModule>
 
-# Optional: default index
-DirectoryIndex index.php index.html
+DirectoryIndex index.php

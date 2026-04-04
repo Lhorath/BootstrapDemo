@@ -1,2 +1,19 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# No * text=auto — mark text vs binary explicitly so Git does not guess per file.
+* -text
+
+# Source and config (LF)
+*.php text eol=lf linguist-language=PHP diff=php
+*.css text eol=lf linguist-language=CSS diff=css
+*.js text eol=lf linguist-language=JavaScript diff=javascript
+*.md text eol=lf linguist-language=Markdown diff=markdown
+*.xml text eol=lf linguist-language=XML
+*.properties text eol=lf linguist-language=INI
+.htaccess text eol=lf linguist-language=ApacheConf
+.gitattributes text eol=lf
+.gitignore text eol=lf
+LICENSE text eol=lf
+*.svg text eol=lf linguist-language=SVG
+
+# Third-party / IDE noise: exclude from language stats (Linguist)
+vendor/** linguist-vendored
+nbproject/** linguist-vendored

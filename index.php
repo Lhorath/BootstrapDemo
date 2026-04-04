@@ -1,32 +1,29 @@
 <?php
 declare(strict_types=1);
 
-$route = isset($_GET['route']) ? trim((string) $_GET['route'], '/') : 'home';
-$route = strtolower($route);
-if ($route === '') {
-    $route = 'home';
+/**
+ * Front controller: every non-file request is rewritten here (.htaccess).
+ * Path resolution and security checks live in includes/router.php.
+ */
+require_once __DIR__ . '/includes/router.php';
+
+$dispatch = app_dispatch();
+http_response_code($dispatch['status']);
+
+$route = $dispatch['route'];
+$pageTitle = $dispatch['page_title'];
+
+// Expose template-specific variables (product detail, listings, etc.)
+foreach ($dispatch['vars'] as $key => $value) {
+    ${$key} = $value;
 }
 
-$templates = [
-    'home' => 'home.php',
-    'about' => 'about.php',
-    'services' => 'services.php',
-    'contact' => 'contact.php',
-];
-
-if (!isset($templates[$route])) {
-    http_response_code(404);
-    $route = '404';
-    $templates['404'] = '404.php';
-}
-
-$templateFile = $templates[$route];
-$templatePath = __DIR__ . '/templates/' . $templateFile;
+$templatePath = __DIR__ . '/templates/' . $dispatch['template'];
 if (!is_readable($templatePath)) {
     http_response_code(500);
     exit('Template missing.');
 }
 
-include __DIR__ . '/includes/header.php';
-include $templatePath;
-include __DIR__ . '/includes/footer.php';
+require __DIR__ . '/includes/header.php';
+require $templatePath;
+require __DIR__ . '/includes/footer.php';

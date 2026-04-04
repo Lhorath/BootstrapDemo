@@ -1,3 +1,8 @@
+<?php
+declare(strict_types=1);
+
+require_once __DIR__ . '/functions.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,7 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Business Name</title>
+    <title><?= h($pageTitle ?? 'Business Name') ?></title>
+    <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+    <!-- Browsers still request /favicon.ico; .htaccess maps it to the SVG above -->
 
     <!-- Bootstrap core CSS -->
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -34,6 +41,9 @@
             </li>
             <li class="nav-item<?= ($route ?? '') === 'contact' ? ' active' : '' ?>">
               <a class="nav-link" href="/contact">Contact</a>
+            </li>
+            <li class="nav-item<?= ($route ?? '') === 'products' ? ' active' : '' ?>">
+              <a class="nav-link" href="/products">Products</a>
             </li>
           </ul>
         </div>
